@@ -1,4 +1,5 @@
 let screen = document.getElementsByClassName("screen")[0];
+let keys = document.querySelector(".keys");
 
 let numbers = document.querySelectorAll(".number");
 let operation = document.querySelectorAll(".operation");
@@ -42,3 +43,12 @@ equal.addEventListener("click", calculat);
 clearBtn.addEventListener("click", clear);
 
 backBtn.addEventListener("click", back);
+
+[...keys.children].forEach((element) =>
+  element.addEventListener("click", () => {
+    element.animate(
+      [{ boxShadow: "0 8px 12px 0px rgb(0 0 0 / 46%)" }, { boxShadow: "none" }],
+      { duration: 150 }
+    );
+  })
+);
