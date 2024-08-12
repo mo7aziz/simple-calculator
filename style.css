@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.span-two-cols {
+  grid-column: span 2;
+  background-color: rgb(255 123 23);
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  display: grid;
+  height: 100dvh;
+  background-color: rgb(255 163 102);
+}
+
+.calculator {
+  place-self: center;
+  background-color: rgb(30 53 65);
+  width: 21rem;
+  padding: 2rem 1rem;
+  border-radius: 1.5rem;
+}
+
+.history {
+  color: rgb(255 255 255 / 85%);
+  font-size: 1.2rem;
+}
+
+.current {
+  color: white;
+  font-size: 5rem;
+  padding-block: 1rem 1rem;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+button {
+  background-color: rgb(30 53 65);
+  color: white;
+  border-style: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 2.5rem;
+  height: 4rem;
+  box-shadow: 0 8px 12px 0px rgb(0 0 0 / 46%);
+}
+
+.operation,
+.back {
+  color: rgb(255 123 23);
+}
+
+.comma {
+  font-size: 0.5rem;
+}
