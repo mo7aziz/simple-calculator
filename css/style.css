@@ -6,12 +6,6 @@
   font-family: "Roboto", sans-serif;
 }
 
-@keyframes press {
-  100% {
-    box-shadow: none;
-  }
-}
-
 .span-two-cols {
   grid-column: span 2;
   background-color: rgb(255 123 23);
@@ -58,7 +52,6 @@ button {
   cursor: pointer;
   font-size: 2.5rem;
   height: 4rem;
-  box-shadow: 0 8px 12px 0px rgb(0 0 0 / 46%);
 }
 
 .operation,
