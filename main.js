@@ -1,17 +1,44 @@
-let calculationsHistory = document.getElementsByClassName("history")[0];
-let curentCalculation = document.getElementsByClassName("current")[0];
+let screen = document.getElementsByClassName("screen")[0];
+
 let numbers = document.querySelectorAll(".number");
+let operation = document.querySelectorAll(".operation");
 
-let clear = document.getElementsByClassName("ac")[0];
-let back = document.getElementsByClassName("back")[0];
+let equal = document.getElementsByClassName("equal")[0];
+let clearBtn = document.getElementsByClassName("ac")[0];
+let backBtn = document.getElementsByClassName("back")[0];
 
-clear.addEventListener("click", () => {
-  calculationsHistory.innerHTML = "";
-  curentCalculation.innerHTML = "";
-});
+function append(number) {
+  screen.textContent += number.textContent;
+}
 
-back.addEventListener("click", () => {
-  op = curentCalculation.innerHTML.split("");
+function calculat() {
+  try {
+    f = screen.textContent;
+    clear();
+    screen.textContent = eval(f);
+  } catch (e) {
+    window.alert(e);
+  }
+}
+
+function clear() {
+  screen.innerHTML = "";
+}
+
+function back() {
+  op = screen.innerHTML.split("");
   op.pop();
-  curentCalculation.innerHTML = op.join("");
+  screen.innerHTML = op.join("");
+}
+
+[...numbers, ...operation].forEach((number) => {
+  number.addEventListener("click", () => {
+    append(number);
+  });
 });
+
+equal.addEventListener("click", calculat);
+
+clearBtn.addEventListener("click", clear);
+
+backBtn.addEventListener("click", back);
