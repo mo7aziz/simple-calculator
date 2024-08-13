@@ -1,4 +1,4 @@
-let screen = document.getElementsByClassName("screen")[0];
+let formul = document.getElementsByClassName("screen")[0];
 let keys = document.querySelector(".keys");
 
 let numbers = document.querySelectorAll(".number");
@@ -9,27 +9,27 @@ let clearBtn = document.getElementsByClassName("ac")[0];
 let backBtn = document.getElementsByClassName("back")[0];
 
 function append(number) {
-  screen.textContent += number.textContent;
+  formul.textContent += number.textContent;
 }
 
 function calculat() {
   try {
-    f = screen.textContent;
+    f = formul.textContent;
     clear();
-    screen.textContent = eval(f);
+    formul.textContent = eval(f);
   } catch (e) {
     window.alert(e);
   }
 }
 
 function clear() {
-  screen.innerHTML = "";
+  formul.innerHTML = "";
 }
 
 function back() {
-  op = screen.innerHTML.split("");
+  op = formul.innerHTML.split("");
   op.pop();
-  screen.innerHTML = op.join("");
+  formul.innerHTML = op.join("");
 }
 
 [...numbers, ...operation].forEach((number) => {
@@ -52,3 +52,21 @@ backBtn.addEventListener("click", back);
     );
   })
 );
+
+const updateOverflow = () => {
+  if (formul.textContent.length < 6) {
+    formul.style.overflowX = "hidden";
+  } else {
+    formul.style.overflowX = "scroll";
+  }
+};
+
+updateOverflow();
+
+const observer = new MutationObserver(updateOverflow);
+
+observer.observe(formul, {
+  childList: true,
+  subtree: true,
+  characterData: true,
+});
