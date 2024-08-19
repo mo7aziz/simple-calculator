@@ -9,7 +9,7 @@ This is a simple calculator built by HTML, CSS, JS
 
 ## Screenshot
 
-![Shot](.screenshot.png)
+![Shot](screenshot.png)
 
 ## Links
 
