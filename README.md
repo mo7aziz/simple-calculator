@@ -3,9 +3,9 @@
 This is a simple calculator built by HTML, CSS, JS
 
 ## Table of contents
-[Screenshot](#screenshot)
-[Links](#links)
-[Built with](#built-with)
+- [Screenshot](#screenshot)
+- [Links](#links)
+- [Built with](#built-with)
 
 ## Screenshot
 
